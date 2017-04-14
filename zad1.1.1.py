@@ -1,4 +1,4 @@
-#odporny na 11111111111111111111111 bez spacji
+#done
 def converter_binary(number): #z dziesietnego na binarny
     a = []
     #print(number)
@@ -14,7 +14,7 @@ def converter_decimal(number): # z binarnego na dziesietny
     for digit in str(number):
         decimal = decimal*2 + int(digit)
     print (decimal, "10")
-    #print (" 10")
+    
 
 
 
@@ -27,25 +27,26 @@ def print_backward(table): #funkcja aby napisać wynik od tylu
         
     
 
- 
 def main():
     while True:
-        type_nr = print (""" Hello in binary and decimal converter
+        type_nr = print (""" ***Hello in binary and decimal converter*** \n        
         First number which you'll write is a number to convert, after that the sesond number is responsible for the system
         '2' is for decimal, '10' is for binary """)
 
         input_read = input()
         try:
-            input_read = input_read.split()
-            number = int(input_read[0])
-            system = int(input_read[1])
-            if system == 10:
-                converter_binary(number)
-            elif system == 2:
-                converter_decimal(number)
+            try:
+                input_read = input_read.split()
+                number = int(input_read[0])
+                system = int(input_read[1])
+                if system == 10:
+                    converter_binary(number)
+                elif system == 2:
+                    converter_decimal(number)
+            except ValueError:
+                print("Error: Use just numbers")
         except IndexError:
-            print("Game over")
-        
+            print("Error: Try again, remember about space place ")
   
 
 
@@ -57,9 +58,4 @@ def main():
             break
             
 main()
-    
-    
-
-
-
 
